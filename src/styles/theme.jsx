@@ -15,5 +15,5 @@ export const darkTheme = {
   buttonBackground:"#EFEFF5",
   buttonBackgroundDark:"#8B8BFF",
   fontColorIcons:"#EFEFF5",
-  fontColorNumbers:"#8B8BFF"
+  fontColorNumbersDark:"#8B8BFF"
 }
