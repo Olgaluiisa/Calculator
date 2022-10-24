@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { GlobalStyle } from './styles/styleGlobal'
 import { ThemeProvider } from 'styled-components'
 import {lightTheme, darkTheme} from "./styles/theme"
-import { useTheme } from './Provider/themeProv'
+import { useTheme } from './Provider/Theme/theme'
 import { Calculator } from './Components/Calculator/Calculator'
 export const App = () => {
   const {theme} = useTheme()
