@@ -8,17 +8,17 @@ export const ButtonProvider = ({ children }) => {
   const [resultValue, setResultValue] = useState(0)
   const [operator,setOperator] = useState("")
 
- 
   console.log(oldValue)
-  console.log()
   
   const handleValue = (value) =>{
     const valueCapturado = +value.target.value
+
     if(value === 0){
       setValueButton(valueCapturado)
     }else{
       setValueButton([valueButton + valueCapturado])
     }
+    
   }
   const handleIconsClick = (value) =>{
     if(valueButton > 0){
@@ -26,6 +26,7 @@ export const ButtonProvider = ({ children }) => {
     } 
     setOperator(value)
     setOldValue(valueButton)
+    
 }
   const clear = () =>{
     setValueButton(0)
@@ -38,7 +39,7 @@ const porcentage = () =>{
   }
 }
 
-const changeSing = () =>{
+const changePositiveOrNegativeValue = () =>{
   if(valueButton > 0){
     setValueButton(-valueButton)
   }else{
@@ -65,8 +66,13 @@ if(operator === "/"){
   setResultValue(oldValue2 / divisao)
 }
 }
+const deleteNumber = () =>{
+const oldNovo = +valueButton.toString().slice(0,-1)
+setValueButton(oldNovo)
+}
+
   return (
-    <ButtonContext.Provider value={{handleValue,valueButton,clear,resultValue,porcentage,handleIconsClick,calculator,changeSing}}>
+    <ButtonContext.Provider value={{handleValue,valueButton,clear,resultValue,porcentage,handleIconsClick,calculator,changePositiveOrNegativeValue,deleteNumber}}>
       {children}
     </ButtonContext.Provider>
   );
