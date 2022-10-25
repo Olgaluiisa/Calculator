@@ -31,7 +31,7 @@ export const ButtonProvider = ({ children }) => {
 }
 
 //Deleta numeros
-const deleteNumber = () =>{
+const deleteNumbers = () =>{
   const oldNovo = +valueButton.toString().slice(0,-1)
   setValueButton(oldNovo)
   }
@@ -80,7 +80,7 @@ if(operator === "/"){
 
 
   return (
-    <ButtonContext.Provider value={{valueNumber,valueButton,clear,resultValue,porcentage,valueIcons,calculator,changePositiveOrNegativeValue,deleteNumber}}>
+    <ButtonContext.Provider value={{valueNumber,valueButton,clear,resultValue,porcentage,valueIcons,calculator,changePositiveOrNegativeValue,deleteNumbers}}>
       {children}
     </ButtonContext.Provider>
   );
