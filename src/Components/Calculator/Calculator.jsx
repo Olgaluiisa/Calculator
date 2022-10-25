@@ -8,7 +8,7 @@ import { useButton } from "../../Provider/Button"
 
 export const Calculator = () => {
   const {theme,themeToggler} = useTheme()
-  const {handleValue,valueButton,clear,resultValue,porcentage,handleIconsClick,calculator,changeSing} = useButton()
+  const {handleValue,valueButton,clear,resultValue,porcentage,handleIconsClick,calculator,changePositiveOrNegativeValue,deleteNumber} = useButton()
   return (
     <Container>
       {theme === "dark" ?<ContainerScreen dark>
@@ -31,7 +31,7 @@ export const Calculator = () => {
       <ButtonsContainer>
       {theme === "dark" ? <Button roxo  onClick={clear}>AC</Button> : <Button branco onClick={clear}>AC</Button>}
 
-      {theme === "dark" ? <Button roxo onClick={changeSing}>+/-</Button> : <Button branco onClick={changeSing}>+/-</Button>}
+      {theme === "dark" ? <Button roxo onClick={changePositiveOrNegativeValue}>+/-</Button> : <Button branco onClick={changePositiveOrNegativeValue}>+/-</Button>}
 
       {theme === "dark" ? <Button roxo onClick={porcentage}><RiPercentLine size={"40px"}/></Button> : <Button branco onClick={porcentage}><RiPercentLine size={"40px"}/></Button>}
 
@@ -61,7 +61,7 @@ export const Calculator = () => {
 
       {theme === "dark" ?  <Button roxo onClick={()=> handleIconsClick("+")}><RiAddLine size={"50px"}/></Button> :  <Button branco onClick={()=> handleIconsClick("+")}><RiAddLine size={"50px"}/></Button>}
 
-      {theme === "dark" ?  <Button roxo value={"del"}><RiDeleteBack2Line size={"40px"}/></Button> : <Button branco value={"del"}><RiDeleteBack2Line size={"40px"}/></Button>}
+      {theme === "dark" ?  <Button roxo onClick={deleteNumber} ><RiDeleteBack2Line size={"40px"}/></Button> : <Button branco value={"del"}><RiDeleteBack2Line size={"40px"}/></Button>}
 
       {theme === "dark" ?  <Button roxoNumber onClick={handleValue} value={0}>0</Button> : <Button onClick={handleValue} value={0}>0</Button>}
 
