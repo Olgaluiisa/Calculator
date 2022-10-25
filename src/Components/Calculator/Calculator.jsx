@@ -61,7 +61,7 @@ export const Calculator = () => {
 
       {theme === "dark" ?  <Button roxo onClick={()=> handleIconsClick("+")}><RiAddLine size={"50px"}/></Button> :  <Button branco onClick={()=> handleIconsClick("+")}><RiAddLine size={"50px"}/></Button>}
 
-      {theme === "dark" ?  <Button roxo onClick={deleteNumber} ><RiDeleteBack2Line size={"40px"}/></Button> : <Button branco value={"del"}><RiDeleteBack2Line size={"40px"}/></Button>}
+      {theme === "dark" ?  <Button roxo onClick={deleteNumber} ><RiDeleteBack2Line size={"40px"}/></Button> : <Button branco onClick={deleteNumber}><RiDeleteBack2Line size={"40px"}/></Button>}
 
       {theme === "dark" ?  <Button roxoNumber onClick={handleValue} value={0}>0</Button> : <Button onClick={handleValue} value={0}>0</Button>}
 
