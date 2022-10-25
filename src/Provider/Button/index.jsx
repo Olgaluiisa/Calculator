@@ -8,9 +8,9 @@ export const ButtonProvider = ({ children }) => {
   const [resultValue, setResultValue] = useState(0)
   const [operator,setOperator] = useState("")
 
-  console.log(oldValue)
-  
-  const handleValue = (value) =>{
+
+  //Captura valor dos numeros e armazena no no state : "valor botão"
+  const valueNumber = (value) =>{
     const valueCapturado = +value.target.value
 
     if(value === 0){
@@ -20,7 +20,8 @@ export const ButtonProvider = ({ children }) => {
     }
     
   }
-  const handleIconsClick = (value) =>{
+  //Captura valor dos icones (operadores) e armazena no state : "valor botão"
+  const valueIcons = (value) =>{
     if(valueButton > 0){
       setValueButton([valueButton + value])
     } 
@@ -28,17 +29,26 @@ export const ButtonProvider = ({ children }) => {
     setOldValue(valueButton)
     
 }
+
+//Deleta numeros
+const deleteNumbers = () =>{
+  const oldNovo = +valueButton.toString().slice(0,-1)
+  setValueButton(oldNovo)
+  }
+
+//Limpa todos os states
   const clear = () =>{
     setValueButton(0)
     setResultValue(0)
     setOldValue(0)
 }
+//Calcula as porcentagens
 const porcentage = () =>{
   if(valueButton > 0){
     setResultValue(valueButton / 100)
   }
 }
-
+//Transforma o número em negativo ou positivo
 const changePositiveOrNegativeValue = () =>{
   if(valueButton > 0){
     setValueButton(-valueButton)
@@ -47,6 +57,7 @@ const changePositiveOrNegativeValue = () =>{
   }
 }
 
+//Realiza as operações matemáticas
 const calculator = () =>{
   const oldValue2 = +oldValue.toString()
   if(operator === "-"){
@@ -66,13 +77,10 @@ if(operator === "/"){
   setResultValue(oldValue2 / divisao)
 }
 }
-const deleteNumber = () =>{
-const oldNovo = +valueButton.toString().slice(0,-1)
-setValueButton(oldNovo)
-}
+
 
   return (
-    <ButtonContext.Provider value={{handleValue,valueButton,clear,resultValue,porcentage,handleIconsClick,calculator,changePositiveOrNegativeValue,deleteNumber}}>
+    <ButtonContext.Provider value={{valueNumber,valueButton,clear,resultValue,porcentage,valueIcons,calculator,changePositiveOrNegativeValue,deleteNumbers}}>
       {children}
     </ButtonContext.Provider>
   );
