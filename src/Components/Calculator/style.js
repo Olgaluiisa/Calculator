@@ -30,7 +30,8 @@ p{
   cursor: pointer;
 }
 span{
-  font-size: 32px;  
+  font-size: 32px; 
+  padding-right: 8px; 
 }
 h2{
   font-size: 64px;
