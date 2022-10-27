@@ -7,7 +7,9 @@ export const ButtonProvider = ({ children }) => {
   const [valueButton, setValueButton] = useState(0)
   const [resultValue, setResultValue] = useState(0)
   const [operator,setOperator] = useState("")
-
+  
+ 
+  
 
   //Captura valor dos numeros e armazena no no state : "valor botão"
   const valueNumber = (value) =>{
@@ -23,7 +25,7 @@ export const ButtonProvider = ({ children }) => {
   //Captura valor dos icones (operadores) e armazena no state : "valor botão"
   const valueIcons = (value) =>{
     if(valueButton > 0){
-      setValueButton([valueButton + value])
+      setValueButton(valueButton + value)
     } 
     setOperator(value)
     setOldValue(valueButton)
@@ -51,7 +53,7 @@ const porcentage = () =>{
 //Transforma o número em negativo ou positivo
 const changePositiveOrNegativeValue = () =>{
   if(valueButton > 0){
-    setValueButton(-valueButton)
+    setValueButton(-Math.abs(valueButton))
   }else{
     setValueButton(Math.abs(valueButton))
   }
