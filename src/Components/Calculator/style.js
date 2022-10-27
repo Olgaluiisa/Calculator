@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-width: 507px;
-height: 892px;
+width: 400px;
+height: 698px;
 margin: 20px auto;
 padding: 15px 20px;
 border-radius: 30px;
@@ -10,8 +10,8 @@ box-shadow: 4px 4px 4px rgba(0,0,0,0.25);
 background-color: ${props => props.theme.calculatorBackground};
 `
 export const ContainerScreen = styled.div`
-width: 462px;
-height: 273px;
+width: 362px;
+height: 200px;
 display: flex;
 flex-direction: column;
 text-align: right;
@@ -28,19 +28,20 @@ div{
 }
 p{
   cursor: pointer;
+  padding-right: 3px; 
 }
 span{
-  font-size: 32px; 
+  font-size: 1.3rem; 
   padding-right: 8px; 
 }
 h2{
-  font-size: 64px;
+  font-size: 3.5rem;
 }
 `
 export const ButtonsContainer = styled.div`
 display: grid;
-grid-template-columns: repeat(4, 115px);
-gap: 20px 10px;
+grid-template-columns: repeat(4, 75px);
+gap: 20px;
 border-radius: 50px;
 
 svg{
