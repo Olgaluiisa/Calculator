@@ -17,7 +17,7 @@ flex-direction: column;
 text-align: right;
 justify-content: space-around;
 margin-bottom: 20px;
-border-radius: 25px;
+border-radius: 26px;
 border: ${props => props.dark ? "2px solid #000" : null};
 background-color: ${props => props.theme.screenBackground};
 color:${props => props.screenColor ? "#121214" : "#EFEFF5"} ;
