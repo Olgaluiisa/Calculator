@@ -17,7 +17,7 @@ flex-direction: column;
 text-align: right;
 justify-content: space-around;
 margin-bottom: 20px;
-border-radius: 50px;
+border-radius: 25px;
 border: ${props => props.dark ? "2px solid #000" : null};
 background-color: ${props => props.theme.screenBackground};
 color:${props => props.screenColor ? "#121214" : "#EFEFF5"} ;
@@ -31,7 +31,7 @@ p{
   padding-right: 3px; 
 }
 span{
-  font-size: 1.3rem; 
+  font-size: 25px; 
   padding-right: 8px; 
 }
 h2{
